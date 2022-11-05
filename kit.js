@@ -1,5 +1,4 @@
 var templates = ['ad.png', '111.png'];
-var con = document.getElementById('anuncios');
 
 //Crea una variable llamada src que obtenga una imagen de templates aleatoria
 var src = templates[Math.floor(Math.random() * templates.length)];
@@ -8,7 +7,7 @@ var adblockSub = 'But we need your help to make this <br> site better!';
 
 
 var ads = {
-    'create': function(position){
+    'create': function(position, append){
         var anuncio = document.createElement('img');
         anuncio.src = src;
 
@@ -113,7 +112,7 @@ var ads = {
         anuncio.style.left = x + 'px';
         anuncio.style.zIndex = '9999';
         setTimeout(function(){
-            document.body.appendChild(anuncio);
+            append.appendChild(anuncio)
         },1)
     },
 }
